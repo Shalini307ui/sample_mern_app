@@ -1,5 +1,9 @@
 let express=require('express');
 let app=express();
+let mongoose=require("mongoose");
+let emproutes=require("./routes/employee_routes");
+app.use(express.json());
+
 
 // //localhost:3000/register
 // app.post("/register",(req,res)=>{
@@ -12,6 +16,11 @@ let app=express();
 //     res.send("view student page called");
 // })
 // // nodemon index.js  (run in terminal)
+
+mongoose.connect("mongodb://localhost:27017/hrmanagement").then(
+    ()=>{console.log("db connect success")}).catch(
+        (err)=>console.log(err));
+    
 
 let hrroutes=require('./routes/HR_routes');
 
