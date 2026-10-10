@@ -7,4 +7,4 @@ class student_model(BaseModel):
 class staff_model(BaseModel):
     staff_name:str
     staff_designation:str
-    
+                                                                                                      
